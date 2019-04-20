@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.hta4.app</groupId>
+    <artifactId>IonicApp</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+	
+			    <build>
+			    <plugins>
+			    <plugin>
+		        <groupId>com.github.eirslett</groupId>
+		        <artifactId>frontend-maven-plugin</artifactId>
+			    <configuration>
+			        <workingDirectory>./</workingDirectory>
+			        <!-- where to install npm -->
+			        <installDirectory>nodeTools</installDirectory>
+			    </configuration>				
+		        <executions>
+				    <!-- <execution> -->
+				        <!-- <id>install node and npm</id> -->
+				        <!-- <goals> -->
+				            <!-- <goal>install-node-and-npm</goal> -->
+				        <!-- </goals> -->
+				        <!-- <phase>generate-resources</phase> -->
+						<!-- <configuration> -->
+					        <!-- <nodeVersion>v10.14.2</nodeVersion> -->
+					        <!-- <npmVersion>6.4.1</npmVersion>					     -->
+					    <!-- </configuration>				         -->
+				    <!-- </execution> -->
+		            <!-- <execution> -->
+		                    <!-- <id>npm install</id> -->
+		                    <!-- <goals> -->
+		                        <!-- <goal>npm</goal> -->
+		                    <!-- </goals> -->
+		                    <!-- Optional configuration which provides for running any npm command -->
+		                    <!-- <configuration> -->
+		                        <!-- <arguments>install</arguments> -->
+		                        <!-- <workingDirectory>./</workingDirectory> -->
+		                    <!-- </configuration> -->
+		             <!-- </execution> -->
+					 
+					 
+			         <!-- <execution> -->
+			             <!-- <id>Build web</id> -->
+			             <!-- <goals> -->
+			               <!-- <goal>npm</goal> -->
+			             <!-- </goals> -->
+			             <!-- <configuration> -->
+			               <!-- <arguments>run-script ionicweb</arguments> -->
+			               <!-- <workingDirectory>./</workingDirectory> -->
+			             <!-- </configuration> -->
+			             <!-- <phase>generate-resources</phase> -->
+			          <!-- </execution> -->
+			         <execution>
+			             <id>Build android</id>
+			             <goals>
+			               <goal>npm</goal>
+			             </goals>
+			             <configuration>
+			               <arguments>run-script ionicandroid</arguments>
+			               <workingDirectory>./</workingDirectory>
+			             </configuration>
+			             <phase>generate-resources</phase>
+			          </execution>
+			         <execution>
+			             <id>Build ios</id>
+			             <goals>
+			               <goal>npm</goal>
+			             </goals>
+			             <configuration>
+			               <arguments>run-script ionicios</arguments>
+			               <workingDirectory>./</workingDirectory>
+			             </configuration>
+			             <phase>generate-resources</phase>
+			          </execution>						  
+		        </executions>
+		    </plugin>
+			
+
+    <!-- <plugin> -->
+        <!-- <groupId>com.maven.ionic.project</groupId> -->
+        <!-- <artifactId>ionic</artifactId> -->
+        <!-- <version>1.0</version> -->
+        <!-- <configuration> -->
+            <!-- <arguments>${args}</arguments> -->
+            <!-- <workingDirectory>${workingDirectory}</workingDirectory> -->
+            <!-- <platform>${platform}</platform> -->
+            <!-- <component>${component}</component> -->
+            <!-- <name>${component.name}</name> -->
+            <!-- <npmGoal>${npm.goal}</npmGoal> -->
+            <!-- <force>${force}</force> -->
+        <!-- </configuration> -->
+    <!-- </plugin> -->
+
+		    </plugins>
+		    </build>
+	
+</project>
